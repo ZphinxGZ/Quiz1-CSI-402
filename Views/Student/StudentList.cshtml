@@ -1,0 +1,23 @@
+@model Quiz_5070_Kunakorn.Models.UserViewModel
+@{
+    Layout = "_StudentLayout";
+}
+<div class="container mt-2 p-5" style="background-color: rgb(211, 211, 211);">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>UsesrId</th>
+                <th>password</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>@user.UserId</td>
+                        <td>@user.password</td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+</div>
