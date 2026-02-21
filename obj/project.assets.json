@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ZphinxGz\\Desktop\\402 66075070\\Quiz1-CSI-402\\Quiz_5070_Kunakorn.csproj",
+      "projectUniqueName": "C:\\Users\\ZphinxGz\\Desktop\\Au\\GH\\Quiz1-CSI-402\\Quiz_5070_Kunakorn.csproj",
       "projectName": "Quiz_5070_Kunakorn",
-      "projectPath": "C:\\Users\\ZphinxGz\\Desktop\\402 66075070\\Quiz1-CSI-402\\Quiz_5070_Kunakorn.csproj",
+      "projectPath": "C:\\Users\\ZphinxGz\\Desktop\\Au\\GH\\Quiz1-CSI-402\\Quiz_5070_Kunakorn.csproj",
       "packagesPath": "C:\\Users\\ZphinxGz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ZphinxGz\\Desktop\\402 66075070\\Quiz1-CSI-402\\obj\\",
+      "outputPath": "C:\\Users\\ZphinxGz\\Desktop\\Au\\GH\\Quiz1-CSI-402\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
