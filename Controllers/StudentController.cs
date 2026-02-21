@@ -36,4 +36,51 @@ public class StudentController : Controller
         ViewBag.UserId = userList.LastOrDefault()?.UserId;
         return View(vm);
     }
+
+    public IActionResult CalculateForm()
+    {
+        var vm = new ScoreViewModel { Scores = new List<int>(new int[10]) };
+        return View(vm);
+    }
+
+    [HttpPost]
+    public IActionResult CalculateForm(ScoreViewModel form)
+    {
+        if (form.Scores != null && form.Scores.Count > 0)
+        {
+            form.TotalScore = form.Scores.Sum();
+            
+            // Determine grade based on total score
+            if (form.TotalScore >= 800)
+                form.Grade = "A";
+            else if (form.TotalScore >= 700)
+                form.Grade = "B";
+            else if (form.TotalScore >= 600)
+                form.Grade = "C";
+            else if (form.TotalScore >= 500)
+                form.Grade = "D";
+            else
+                form.Grade = "F";
+        }
+
+        ViewBag.UserId = userList.LastOrDefault()?.UserId;
+        ViewBag.TotalScore = form.TotalScore;
+        ViewBag.Grade = form.Grade;
+        
+        return View(form);
+    }
+
+    public IActionResult MyDetails()
+    {
+        ViewBag.FirstName = "สมชาย";
+        ViewBag.LastName = "คุณากร";
+        ViewBag.StudentId = "6607507xxx";
+        ViewBag.Age = 20;
+        ViewBag.Email = "somchai@example.com";
+        ViewBag.PhoneNumber = "0812345678";
+        ViewBag.Department = "วิทยาศาสตร์คอมพิวเตอร์";
+        ViewBag.Address = "123 ถนนประชาชาติ กรุงเทพฯ 10110";
+
+        return View();
+    }
 }

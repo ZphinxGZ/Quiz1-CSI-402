@@ -1,8 +1,56 @@
 @model Quiz_5070_Kunakorn.Models.UserViewModel
 @{
     Layout = "_StudentLayout";
+    ViewData["Title"] = "Home";
 }
 
-<div>
-    <h1>ยินดีต้อนรับคุณ : @Model.Users.LastOrDefault()?.UserId</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-body text-center py-5">
+                    <h1 class="display-4 text-success mb-4">
+                        <i class="bi bi-hand-thumbs-up"></i> ยินดีต้อนรับคุณ
+                    </h1>
+                    <h2 class="card-title mb-3 text-primary">
+                        👤 @Model.Users.LastOrDefault()?.UserId
+                    </h2>
+                    <p class="lead text-muted mb-4">
+                        เข้าสู่ระบบสำเร็จ
+                    </p>
+
+                    <div class="divider my-4" style="border-top: 2px solid #dee2e6;"></div>
+
+                    <p class="text-muted mb-4">
+                        เลือกเมนูด้านบนเพื่อดำเนินการต่อ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+    .card {
+        border-radius: 0.75rem;
+    }
+
+    .display-4 {
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .card-body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    }
+
+    @@media (max-width: 768px) {
+        .display-4 {
+            font-size: 2rem;
+        }
+
+        .card-body {
+            padding: 2rem 1rem;
+        }
+    }
+</style>

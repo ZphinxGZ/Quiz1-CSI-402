@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Quiz_5070_Kunakorn")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+463bedc82acb4fb78ca6cffcd89233434ba51033")]
 [assembly: System.Reflection.AssemblyProductAttribute("Quiz_5070_Kunakorn")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Quiz_5070_Kunakorn")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

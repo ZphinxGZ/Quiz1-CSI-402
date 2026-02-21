@@ -1,0 +1,112 @@
+@model Quiz_5070_Kunakorn.Models.ScoreViewModel
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Calculate Form";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-gradient bg-success text-white">
+                    <h3 class="card-title mb-0">
+                        <i class="bi bi-calculator"></i> การคำนวณคะแนน
+                    </h3>
+                </div>
+
+                <div class="card-body">
+                    @if (ViewBag.TotalScore != null)
+                    {
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            <h5 class="alert-heading mb-2">📊 ผลการคำนวณ</h5>
+                            <p class="mb-1"><strong>คะแนนรวม:</strong> <span class="badge bg-success fs-6">@ViewBag.TotalScore / 1000</span></p>
+                            <p class="mb-0"><strong>เกรด:</strong> <span class="badge bg-primary fs-6">@ViewBag.Grade</span></p>
+                        </div>
+                    }
+
+                    <form method="post" asp-action="CalculateForm">
+                        <div class="row">
+                            @for (int i = 0; i < 10; i++)
+                            {
+                                <div class="col-md-6 mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light">
+                                            <strong>ครั้งที่ @(i + 1)</strong>
+                                        </span>
+                                        <input type="number" 
+                                               class="form-control" 
+                                               name="Scores[@i]"
+                                               min="0" 
+                                               max="100"
+                                               value="@Model?.Scores?[i]"
+                                               placeholder="0-100"
+                                               required>
+                                        <span class="input-group-text">/ 100</span>
+                                    </div>
+                                    <small class="text-muted d-block mt-1">คะแนนเต็ม 100</small>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-success btn-lg me-2">
+                                <i class="bi bi-calculate"></i> คำนวณคะแนน
+                            </button>
+                            <a href="@Url.Action("Index", "Student")" class="btn btn-secondary btn-lg">
+                                ย้อนกลับ
+                            </a>
+                        </div>
+                    </form>
+
+                    <div class="mt-5 p-3 bg-light rounded">
+                        <h6 class="text-muted mb-2">📝 หมายเหตุ:</h6>
+                        <ul class="small text-muted mb-0">
+                            <li>กรุณากรอกคะแนนแต่ละครั้ง (0-100)</li>
+                            <li>คะแนนรวม = ผลรวมของคะแนนทั้ง 10 ครั้ง (เต็ม 1000)</li>
+                            <li>การจัดเกรด: A (800+), B (700-799), C (600-699), D (500-599), F (น้อยกว่า 500)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border: none;
+        border-radius: 0.5rem;
+    }
+
+    .card-header {
+        border-radius: 0.5rem 0.5rem 0 0;
+        background: linear-gradient(135deg, #28a745, #20c997) !important;
+    }
+
+    .input-group {
+        border-radius: 0.375rem;
+        overflow: hidden;
+    }
+
+    .btn {
+        border-radius: 0.375rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    @@media (max-width: 768px) {
+        .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .btn-lg {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
